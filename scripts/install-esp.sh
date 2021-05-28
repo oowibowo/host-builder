@@ -19,4 +19,15 @@ cp ${CDIR}/../templates/config.yml /opt/esp/conf/config.yml
 # https://github.com/intel/edge-software-provisioner#quick-installation-guide
 cd /opt/esp
 ./build.sh
-./run.sh
+./run.sh -n
+
+# Create a staging folder
+cd /opt
+mkdir -p /opt/esp/data/usr/share/nginx/html/stage
+ln -s /opt/esp/data/usr/share/nginx/html/stage stage
+
+# Sub-staging folders
+mkdir -p /opt/stage/kernel
+mkdir -p /opt/stage/qemu
+mkdir -p /opt/stage/disk
+
