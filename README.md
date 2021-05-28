@@ -2,7 +2,7 @@
 
 Host Builder for ESP GVTg KVM cobination
 
-This is being done as sudo since ESP requires 
+This is being done as sudo since ESP requires it
 
 ## Download/configure host-builder
 ```bash
@@ -20,7 +20,6 @@ git clone git@github.com:sedillo/host-builder.git
 ```bash
 /opt/host-builder/scripts/install-esp.sh
 ```
-If no errors display, hit CTRL+C to safely stop following logs
 
 ## Build Kernel & OVMF
 This step take about 30 minutes
@@ -45,6 +44,6 @@ git -C /opt/stage clone -b <BRANCH> https://github.com/sedillo/kvm-target.git ta
 Move any disk images to the following directory *Make sure the file ends in .qcow2*
 - /opt/stage/disk/\*.qcow2
 
-## Qemu Binary
-Optional: A default Qemu is installed, but this can be overriden by adding qemu here 
+## Optional: Qemu Binary
+A default Qemu is installed by default, but this can be overriden by adding qemu here 
 - /opt/stage/qemu/qemu.tar.gz
