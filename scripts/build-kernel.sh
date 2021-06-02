@@ -4,7 +4,7 @@ set -x
 CDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 REPOS=${CDIR}/../repos
 
-git -C ${REPOS} clone git@github.com:sedillo/linuxbox.git build-kernel 
+git -C ${REPOS} clone https://github.com/sedillo/linuxbox.git build-kernel 
 cd ${REPOS}/build-kernel
 docker build -t linux_box:latest -f ./dockerfiles/Dockerfile.kernel ./dockerfiles
 docker run \
