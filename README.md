@@ -8,7 +8,7 @@ This is being done as sudo since ESP requires it
 ```bash
 sudo su
 cd /opt
-git clone git@github.com:sedillo/host-builder.git
+git clone https://github.com/sedillo/host-builder.git
 /opt/host-builder/scripts/configure.sh
 ```
 ## Install Docker
