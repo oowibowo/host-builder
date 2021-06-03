@@ -26,6 +26,6 @@ apt-get install -y alien
 #wget https://www.kraxel.org/repos/jenkins/edk2/edk2.git-ovmf-x64-0-20210421.12.gf297b7f200.noarch.rpm
 wget https://www.kraxel.org/repos/jenkins/edk2/edk2.git-ovmf-x64-0-20210421.18.g15ee7b7689.noarch.rpm
 
-alien alien edk2.git-ovmf*.rpm
+alien edk2.git-ovmf*.rpm
 cp edk2.git-ovmf-*.deb /opt/stage/kernel/OVMF.deb
 
