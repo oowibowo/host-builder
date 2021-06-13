@@ -55,7 +55,7 @@ It's important to have two separate files here. During run time each VM needs it
 It's ok to just copy the same qcow2 file twice if both VMs use the same image. But both files must exist in a 2 VM system.
 
 ## Boot Targets into PXE
-At this point the ESP server should be running and ready to build target machines. 
+At this point the ESP server should be running and ready to build target machines, [review the documentation here](https://github.com/intel/Edge-Software-Provisioner/tree/v1.6.1). 
 
 ## BETA: Configure the host with all the previous files to test the current setup
 This is a new feature and beta because it is not guaranteed to work especially if host and target are different.
