@@ -7,8 +7,7 @@ This is being done as sudo since ESP requires it
 ## Download/configure host-builder
 ```bash
 sudo su
-cd /opt
-git clone https://github.com/sedillo/host-builder.git
+git -C /opt clone -b 2-chrome-os https://github.com/sedillo/host-builder.git
 ```
 
 ## Setup environment
@@ -41,21 +40,25 @@ $HB_SCRIPT/build-kernel.sh
 ```
 
 ## Choose a Target VM System
-Create a VM file system based on one of the existing branches and fill in BRANCH variable
- - 2-chrome-os
- - chrome-os
- - 2-ubuntu-desktop
- - ubuntu-desktop
+Create a VM file system based that will go on ESP targets
 ```bash
-git -C /opt/stage clone -b <BRANCH> https://github.com/sedillo/kvm-target.git target
+git -C /opt/stage clone -b 2-chrome-os https://github.com/sedillo/kvm-target.git target
 ```
 
 ## Disk Images
-Move any disk images to the following directory *Make sure the file ends in .qcow2*
-- /opt/stage/disk/\*.qcow2
+Move the disk images to the following directory 
+- /opt/stage/disk/vm1-chromeos.qcow2
+- /opt/stage/disk/vm2-chromeos.qcow2
+
+It's important to have two separate files here. During run time each VM needs it's own file system structure (\*.qcow2 file) that it can read/write to. 
+
+It's ok to just copy the same qcow2 file twice if both VMs use the same image. But both files must exist in a 2 VM system.
+
+## Boot Targets into PXE
+At this point the ESP server should be running and ready to build target machines. 
 
 ## BETA: Configure the host with all the previous files to test the current setup
-This is beta because it is not guaranteed to work if host and target are different.
+This is a new feature and beta because it is not guaranteed to work especially if host and target are different.
 ```bash
 #Install missing libraries
 apt-get install -y wget qemu-system-x86 ovmf libegl1-mesa-dev
