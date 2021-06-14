@@ -51,7 +51,7 @@ Move the disk images to the following directory
 
 It's important to have two separate files here. During run time each VM needs it's own file system structure (\*.qcow2 file) that it can read/write to. 
 
-It's ok to just copy the same qcow2 file twice if both VMs use the same image. But both files must exist in a 2 VM system.
+It's ok to use the same qcow2 file twice if both VMs use the same image. But COPY the file so that each VM system has it's qcow2 file.
 
 ## Boot Targets into PXE
 At this point the ESP server should be running and ready to build target machines, [review the documentation here](https://github.com/intel/Edge-Software-Provisioner/tree/v1.6.1). 
