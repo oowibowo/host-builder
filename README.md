@@ -4,7 +4,7 @@ Host Builder for ESP GVTg KVM cobination
 
 This is being done as sudo since ESP requires it
 
-## Download/configure host-builder
+## Download host-builder
 ```bash
 sudo su
 git -C /opt clone -b 2-chrome-os https://github.com/sedillo/host-builder.git
@@ -19,7 +19,6 @@ The following command will set up the variables below for ease of use in the fol
 
 ```
 source /opt/host-builder/scripts/env.sh
-$HB_SCRIPT/configure.sh
 ```
 
 ## Install Docker
