@@ -1,19 +1,11 @@
 #!/bin/bash
-set -x
-
-CDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-REPOS=${CDIR}/../repos
-TEMPLATES=${CDIR}/../templates
-
 
 # Automating step 3 from:
 # https://github.com/intel/edge-software-provisioner#quick-installation-guide
-git -C /opt clone -b master --depth=1 https://github.com/intel/Edge-Software-Provisioner.git esp
-
+git -C /opt clone -b v1.6.1 --depth=1 https://github.com/intel/Edge-Software-Provisioner.git esp
 
 # Copying prebuilt config.yml file
-cp ${CDIR}/../templates/config.yml /opt/esp/conf/config.yml
-
+cp ${HB_TEMPLATE}/config.yml /opt/esp/conf/config.yml
 
 # Automating step 4-5 from:
 # https://github.com/intel/edge-software-provisioner#quick-installation-guide
