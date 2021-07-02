@@ -2,7 +2,7 @@
 
 # Automating step 3 from:
 # https://github.com/intel/edge-software-provisioner#quick-installation-guide
-git -C /opt clone -b v1.6.1 --depth=1 https://github.com/intel/Edge-Software-Provisioner.git esp
+git -C /opt clone -b v1.6.2 --depth=1 https://github.com/intel/Edge-Software-Provisioner.git esp
 
 # Copying prebuilt config.yml file
 cp ${HB_TEMPLATE}/config.yml /opt/esp/conf/config.yml
