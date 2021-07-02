@@ -63,7 +63,7 @@ This is a new feature and beta because it is not guaranteed to work especially i
 apt-get install -y wget qemu-system-x86 ovmf libegl1-mesa-dev
 
 #Install kernel 
-dpkg -i $HB_REPO/build-kernel/build/
+dpkg -i $HB_REPO/build-kernel/build/*.deb
 
 #Fetch helper scripts
 git -C $HB_REPO clone https://github.com/sedillo/idv.git
@@ -80,12 +80,12 @@ mv *.qcow /var/vm/disk
 cp -r /opt/stage/target/* /
 source /var/vm/scripts/env.sh
 
+#Reboot to apply changes
+reboot
+
 #Setup IDV
 $IDV_SCRIPT/create-vgpu.sh
 $IDV_SCRIPT/start-vm.sh
-
-#Reboot to apply changes
-reboot
 ```
  
 ## Optional: Qemu Binary
